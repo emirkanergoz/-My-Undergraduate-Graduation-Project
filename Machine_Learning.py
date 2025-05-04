@@ -14,6 +14,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 
 df = pd.read_parquet("Clean_Vpn_Attack.parquet")
 
@@ -216,3 +217,32 @@ plt.show()
 # Sınıflandırma Raporu
 print("\nClassification Report:")
 print(classification_report(y_true_test, y_pred_test))
+
+
+# Lojistik Regresyon
+
+# Logistic Regression modelini tanımla
+logreg_model = LogisticRegression(class_weight='balanced', max_iter=1000)
+
+# Modeli eğit
+logreg_model.fit(X_train, y_train)
+
+# Tahminler
+y_train_pred_lr = logreg_model.predict(X_train)
+y_val_pred_lr = logreg_model.predict(X_val)
+y_test_pred_lr = logreg_model.predict(X_test)
+
+# Başarı skorları
+print("Eğitim Seti Başarısı (Logistic Regression):", accuracy_score(y_train, y_train_pred_lr)*100)
+print("Validation Seti Başarısı (Logistic Regression):", accuracy_score(y_val, y_val_pred_lr)*100)
+print("Test Seti Başarısı (Logistic Regression):", accuracy_score(y_test, y_test_pred_lr)*100)
+
+# Confusion matrix
+cm = confusion_matrix(y_test, y_test_pred_lr)
+
+# Confusion matrix'i görselleştir
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['0', '1'], yticklabels=['0', '1'])
+plt.xlabel('Tahmin Edilen')
+plt.ylabel('Gerçek Etiket')
+plt.title('Confusion Matrix (Logistic Regression)')
+plt.show()
