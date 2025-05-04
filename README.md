@@ -1,42 +1,57 @@
-# VPN Detection on Cyber Attack Data
+# VPN Kullanımını Tespit Etme - Siber Saldırı Analizi
 
-Bu proje, siber saldırıların VPN kullanıp kullanmadığını tespit etmek amacıyla geliştirilmiştir. Veri seti, "new_train_data.parquet" adlı dosyada bulunan çeşitli özellikler kullanılarak işlenmiş ve makine öğrenimi (ML) ile derin öğrenme (DL) algoritmaları uygulanmıştır.
+Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tespit etmeye yönelik olarak geliştirilmiştir. Makine öğrenimi (ML) ve derin öğrenme (DL) algoritmaları ile analiz gerçekleştirilmiştir.
 
 ## Proje İçeriği
 
-### Dosyalar:
-1. **new_train_data.parquet**: Orijinal veri seti.
-2. **CleanData.py**: Veri ön işleme süreci ve saldırgan/izleyici verilerinin kıtalara ayrılması işlemleri.
-3. **Machine_Learning.py**: Makine öğrenimi ve derin öğrenme algoritmalarının uygulandığı Python dosyası.
-4. **attacker_continent.parquet**: Saldırgan kıtaları bilgilerini içeren parquet dosyası.
-5. **watcher_continent.parquet**: İzleyici kıtaları bilgilerini içeren parquet dosyası.
-6. **Attacker_Country.py**: Saldırgan ülke bilgilerini kıtalara ayıran Python dosyası.
-7. **Watcher_Country.py**: İzleyici ülke bilgilerini kıtalara ayıran Python dosyası.
-8. **Clean_Vpn_Attack.parquet**: Temizlenmiş ve işlenmiş veri seti.
+## 📁 Dosya Yapısı
+
+- `new_train_data.parquet`: Orijinal ham veri seti
+- `CleanData.py`: Veri ön işleme ve kıta bazlı ayırma işlemleri
+- `Machine_Learning.py`: ML ve DL algoritmalarının uygulandığı ana dosya
+- `attacker_continent.parquet`: Saldırganların kıta bilgileri
+- `watcher_continent.parquet`: İzleyicilerin kıta bilgileri
+- `Attacker_Country.py`: Saldırgan ülkeleri kıtalara ayırır
+- `Watcher_Country.py`: İzleyici ülkeleri kıtalara ayırır
+- `Clean_Vpn_Attack.parquet`: Ön işleme sonrası oluşan temiz veri seti
 
 
 ## Kullanım
-Orjinal veri setini aldıktan sonra,(new_train_data.parquet) CleanData.py dosyası ile veri ön işleme sürecini gerçekleştirebilirsiniz. Veri ön işleme süreci bittikten sonra Clean_Vpn_Attack.parquet dosyası oluşacaktır. Machine_Learning.py dosyası ile temizlenmiş veri seti üzerine 5 adet Makine Öğrenimi algoritmalarını ve 1 adet Derin Öğrenme Algoritmasını uygulayabilirsiniz.
+1. Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
+   ```bash
+   python CleanData.py
 
+   Bu işlem sonunda Clean_Vpn_Attack.parquet dosyası oluşacaktır.
+
+   Ardından makine öğrenimi ve derin öğrenme algoritmalarını çalıştırmak için:
+   python Machine_Learning.py
+
+   Not: Sadece analiz sonuçlarını görmek istiyorsanız, doğrudan Clean_Vpn_Attack.parquet ve Machine_Learning.py dosyalarını kullanabilirsiniz.
+   Ön işleme ve diğer süreçlere gerek yoktur. Bu dosyalar, modelin sonuçlarına doğrudan erişim sağlar.
+   
 ## Kullanılan Algoritmalar
-Lojistik Regresyon
-KNN-En Yakın Komşu
-Karar Ağacı
-Rastgele Orman
-Doğrusal Regresyon
 
-Derin Öğrenme Algoritması (MLP)
+**Makine Öğrenimi:**
+- Lojistik Regresyon
+- KNN (En Yakın Komşu)
+- Karar Ağacı
+- Rastgele Orman
+- Doğrusal Regresyon
 
-## Sonuçlar
-Makine öğrenimi ve derin öğrenme algoritmaları ile elde edilen sonuçlar, modelin doğruluğu, precision, recall ve F1 skorları gibi metriklerle birlikte görseller halinde sunulmuştur.
+**Derin Öğrenme:**
+- MLP (Multi-Layer Perceptron)
 
-Örnek Görseller:
-Confusion Matrix
-Başarı Oranı
+## 📊 Sonuçlar
 
-## Not
-Sadece Clean_Vpn_Attack.parquet dosyasını ve Machine_Learning.py dosyasını almak ve çalıştırmak isteyenler için, ön işleme ve diğer süreçlere gerek yoktur. Bu dosyalar, modelin sonuçlarına doğrudan erişim sağlar.
+Modellerin başarıları, aşağıdaki metriklerle değerlendirilmiştir:
+- Doğruluk (Accuracy)
+- Precision
+- Recall
+- F1-Score
 
+### Örnek Görseller:
+- Confusion Matrix
+- Başarı Oranı Grafikleri
 
 ### Gereksinimler:
 Proje Python 3.x ile çalışmaktadır. Gerekli kütüphaneleri yüklemek için aşağıdaki komutu kullanabilirsiniz:
