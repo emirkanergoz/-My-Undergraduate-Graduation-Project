@@ -16,9 +16,10 @@ Bu proje, siber saldırıların VPN kullanıp kullanmadığını tespit etmek am
 
 
 ## Kullanım
-Orjinal veri setini aldıktan sonra,(new_train_data.parquet) CleanData.py dosyası ile veri ön işleme sürecini gerçekleştirebilirsiniz. Veri ön işleme süreci bittikten sonra Clean_Vpn_Attack.parquet dosyası oluşacaktır. Machine_Learning.py dosyası ile temizlenmiş veri seti üzerine 4 adet Makine Öğrenimi algoritmalarını ve 1 adet Derin Öğrenme Algoritmasını uygulayabilirsiniz.
+Orjinal veri setini aldıktan sonra,(new_train_data.parquet) CleanData.py dosyası ile veri ön işleme sürecini gerçekleştirebilirsiniz. Veri ön işleme süreci bittikten sonra Clean_Vpn_Attack.parquet dosyası oluşacaktır. Machine_Learning.py dosyası ile temizlenmiş veri seti üzerine 5 adet Makine Öğrenimi algoritmalarını ve 1 adet Derin Öğrenme Algoritmasını uygulayabilirsiniz.
 
 ## Kullanılan Algoritmalar
+Lojistik Regresyon
 KNN-En Yakın Komşu
 Karar Ağacı
 Rastgele Orman
