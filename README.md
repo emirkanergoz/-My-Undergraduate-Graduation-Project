@@ -55,7 +55,8 @@ Bu projede, çeşitli makine öğrenimi algoritmaları uygulanmış ve en iyi so
 ### Örnek Görseller:
 - Confusion Matrix
 - Başarı Oranı Grafikleri
-
+- Random Forest F1 skoru ve ROC AUC skorları.
+- 
 ### Gereksinimler:
 Proje Python 3.x ile çalışmaktadır. Gerekli kütüphaneleri yüklemek için aşağıdaki komutu kullanabilirsiniz:
 
