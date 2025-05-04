@@ -49,6 +49,9 @@ Modellerin başarıları, aşağıdaki metriklerle değerlendirilmiştir:
 - Recall
 - F1-Score
 
+## Model Seçimi ve Değerlendirme
+Bu projede, çeşitli makine öğrenimi algoritmaları uygulanmış ve en iyi sonuçları veren model olarak Random Forest belirlenmiştir. Ayrıca, modelin aşırı öğrenme (overfitting) yapıp yapmadığını kontrol etmek amacıyla Cross Validation uygulanmış ve modelin aşırı öğrenme yapmadığı doğrulanmıştır. Bu sayede daha güvenilir ve genellenebilir bir model elde edilmiştir.
+
 ### Örnek Görseller:
 - Confusion Matrix
 - Başarı Oranı Grafikleri
