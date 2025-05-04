@@ -15,6 +15,9 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score, StratifiedKFold
+
+
 
 df = pd.read_parquet("Clean_Vpn_Attack.parquet")
 
@@ -246,3 +249,19 @@ plt.xlabel('Tahmin Edilen')
 plt.ylabel('Gerçek Etiket')
 plt.title('Confusion Matrix (Logistic Regression)')
 plt.show()
+
+# Random Forest Cross-Validation
+
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+model = RandomForestClassifier(random_state=42, class_weight='balanced')
+
+# F1-score kullanıyoruz çünkü sınıflar dengesiz
+f1_scores = cross_val_score(model, X, y, cv=cv, scoring='f1')
+
+print("F1-Score (5-fold):", f1_scores)
+print("Ortalama F1-Score:", np.mean(f1_scores))
+
+roc_scores = cross_val_score(model, X, y, cv=cv, scoring='roc_auc')
+print("ROC AUC (5-fold):", roc_scores)
+print("Ortalama ROC AUC:", np.mean(roc_scores))
