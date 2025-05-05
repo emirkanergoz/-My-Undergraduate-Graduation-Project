@@ -14,7 +14,9 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
 - `Attacker_Country.py`: Saldırgan ülkeleri kıtalara ayırır
 - `Watcher_Country.py`: İzleyici ülkeleri kıtalara ayırır
 - `Clean_Vpn_Attack.parquet`: Ön işleme sonrası oluşan temiz veri seti
-
+- `app.py: FastAPI uygulamasını çalıştırır
+- `joblibModelKaydetme.py: Random Forest modelinin joblib ile kaydeder
+- `random_forest_model.joblib: Kaydedilen Random Forest modeli
 
 ## Kullanım
 1. Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
@@ -28,6 +30,15 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
 
    Not: Sadece analiz sonuçlarını görmek istiyorsanız, doğrudan Clean_Vpn_Attack.parquet ve Machine_Learning.py dosyalarını kullanabilirsiniz.
    Ön işleme ve diğer süreçlere gerek yoktur. Bu dosyalar, modelin sonuçlarına doğrudan erişim sağlar.
+
+   FastAPI uygulamasını başlatmak için:
+   Modelin bulunduğu konuma gidip şu kodu çalıştırın:
+   uvicorn app:app --reload
+   Daha sonra "http://127.0.0.1:8000/docs" adresine gidin. "Try it out" butonuna basıp örnek veriler girerek tahmin sonuçlarını kontrol edebilirsiniz.
+   Verinin tahmin sonucu şu şekilde görünecektir:
+   {
+  "prediction": 0
+   }
    
 ## Kullanılan Algoritmalar
 
