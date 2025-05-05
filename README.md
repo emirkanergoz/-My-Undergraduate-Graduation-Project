@@ -36,9 +36,7 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
    uvicorn app:app --reload
    Daha sonra "http://127.0.0.1:8000/docs" adresine gidin. "Try it out" butonuna basıp örnek veriler girerek tahmin sonuçlarını kontrol edebilirsiniz.
    Verinin tahmin sonucu şu şekilde görünecektir:
-   {
-  "prediction": 0
-   }
+   "prediction": 0
    
 ## Kullanılan Algoritmalar
 
