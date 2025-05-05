@@ -14,9 +14,9 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
 - `Attacker_Country.py`: Saldırgan ülkeleri kıtalara ayırır
 - `Watcher_Country.py`: İzleyici ülkeleri kıtalara ayırır
 - `Clean_Vpn_Attack.parquet`: Ön işleme sonrası oluşan temiz veri seti
-- `app.py: FastAPI uygulamasını çalıştırır
-- `joblibModelKaydetme.py: Random Forest modelinin joblib ile kaydeder
-- `random_forest_model.joblib: Kaydedilen Random Forest modeli
+- `app.py`: FastAPI uygulamasını çalıştırır
+- `joblibModelKaydetme.py`: Random Forest modelinin joblib ile kaydeder
+- `random_forest_model.joblib`: Kaydedilen Random Forest modeli
 
 ## Kullanım
 1. Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
