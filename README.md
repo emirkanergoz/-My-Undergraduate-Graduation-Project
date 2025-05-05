@@ -16,7 +16,7 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
 - `Clean_Vpn_Attack.parquet`: Ön işleme sonrası oluşan temiz veri seti
 - `app.py`: FastAPI uygulamasını çalıştırır
 - `joblibModelKaydetme.py`: Random Forest modelinin joblib ile kaydeder
-- `random_forest_model.joblib`: Kaydedilen Random Forest modeli
+- `random_forest_model.joblib`: Kaydedilen Random Forest modeli (İndirme Linki: "https://drive.google.com/file/d/1rXXMbq0hWax6kNiaPL42ezINGWf5h3xU/view?usp=drive_link" ) 
 
 ## Kullanım
 1. Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
