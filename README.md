@@ -19,7 +19,8 @@ Bu proje, siber saldırıların VPN kullanarak yapılıp yapılmadığını tesp
 - `random_forest_model.joblib`: Kaydedilen Random Forest modeli (İndirme Linki: "https://drive.google.com/file/d/1rXXMbq0hWax6kNiaPL42ezINGWf5h3xU/view?usp=drive_link" ) 
 
 ## Kullanım
-1. Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
+- Teknik kısımlarla uğraşmak istemeyenler doğrudan "https://uaemir1-my-undergraduate-graduation-project.hf.space/?__theme=system" Linki üzerinden gerekli Sütun değerlerini girerek modeli test edebilir. (Random Forest Modeli)
+- Orijinal veri seti olan `new_train_data.parquet` dosyasını kullanarak veri ön işleme işlemini başlatın:
    ```bash
    python CleanData.py
 
